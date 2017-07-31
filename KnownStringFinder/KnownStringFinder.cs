@@ -41,7 +41,6 @@ namespace Finder
         {
             if (string.IsNullOrEmpty(text)) return new HashSet<string>();
 
-            int wordStartIndex = 0;
             var set = new HashSet<string>();
             var current = root;
             for (int i = 0; i < text.Length; i++)
@@ -49,7 +48,6 @@ namespace Finder
                 CharNode child;
                 if (current.Children.TryGetValue(text[i], out child))
                 {
-                    wordStartIndex++;
                     current = child;
                 }
                 else
